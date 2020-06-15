@@ -1,0 +1,60 @@
+<ion-header class="bg-transparent">
+    <ion-navbar>
+        <ion-title>            
+            <ion-badge class="end">
+                <ion-icon name="md-stopwatch"></ion-icon>
+                {{ultDiasProd}} Días
+            </ion-badge>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <div class="banner">
+        <img [src]="imgProd">
+        <div class="store-name">
+            <h2 class="text-white d-flex">{{nombreProd}}
+            </h2>
+        </div>
+    </div>
+    <div class="details">
+        <div class="about">
+            <h3 class="text-black">{{'about_offer' | translate}}</h3>
+            <p class="text-black">{{nombreProd}}. Valor estimado: $ {{importeProd}} </p>
+        </div>
+        <div class="interested d-flex">
+            <h3 class="d-flex text-black">
+                    {{cantSolicitudes}}
+                <small class="text-black">{{'people_send' | translate}}</small>
+            </h3>
+            <button  *ngIf="!ProductoCanjeado" ion-button block icon-start class="btn text-white end" round (click)="AbrirPopup()">
+                <ion-icon class="material-icons">notifications</ion-icon>
+                {{'send_invitation' | translate}}
+            </button>
+            <button *ngIf="ProductoCanjeado" ion-button block icon-start class="btn text-white end" round (click)="AbrirChat()">
+                    <ion-icon class="material-icons">mail</ion-icon>
+                    Enviar Chat
+                </button>
+            
+        </div>
+        
+        
+        <div class="address">
+                <div id="map_canvas"></div>
+            <!--
+            <h3 class="text-white d-flex">{{'address' | translate}}
+              
+            </h3>
+            
+            
+            <p class="text-white">Barrio Belgrano. Capital Federal</p>
+            <div class="map">
+                <img src="assets/imgs/mapa3.jpg">
+            </div>
+            <img src="assets/imgs/ic_pin.png" class="location">
+            -->
+        </div>
+        
+    </div>
+
+</ion-content>

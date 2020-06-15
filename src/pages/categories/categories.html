@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{'categories' | translate}}
+            <!-- <span class="end">
+                <img src="assets/imgs/ic_search.png" (click)="search()">
+            </span>-->
+        </ion-title> 
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <ion-list no-lines>
+        <!-- <ion-item (click)="category_result()">
+            <img src="assets/imgs/ca1.png" class="bg">
+            <div text-center class="text">
+                <h2 class="text-white">{{'food_restaurants' | translate}}</h2>
+                <p class="text-gray">150 Canjes</p>
+            </div>
+        </ion-item>
+        <ion-item (click)="category_result()">
+            <img src="assets/imgs/ca2.png" class="bg">
+            <div text-center class="text">
+                <h2 class="text-white"> {{'Moda' | translate}}</h2>
+                <p class="text-gray">198 Canjes</p>
+            </div>
+        </ion-item>
+        <ion-item (click)="category_result()">
+            <img src="assets/imgs/ca4.png" class="bg">
+            <div text-center class="text">
+                <h2 class="text-white">{{'dairy_bakery' | translate}}</h2>
+                <p class="text-gray">110 Canjes</p>
+            </div>
+        </ion-item>
+        <ion-item (click)="category_result()">
+            <img src="assets/imgs/ca3.png" class="bg">
+            <div text-center class="text">
+                <h2 class="text-white">{{'fashion_store' | translate}}</h2>
+                <p class="text-gray">209 Canjes</p>
+            </div>
+        </ion-item>
+        <ion-item (click)="category_result()">
+            <img src="assets/imgs/ca5.png" class="bg">
+            <div text-center class="text">
+                <h2 class="text-white">{{'salon_spa' | translate}}</h2>
+                <p class="text-gray">111 Canjes</p>
+            </div>
+        </ion-item> -->
+
+        <ion-item *ngFor="let d of categoriasLst; let i = index" (click)="category_result()">
+            <img [src]="d.Imagen" class="bg">
+            <div text-center class="text">
+                <h2 class="text-white">{{d.Nombre | translate}}</h2>
+                <p class="text-gray">{{d.Id}} Canjes</p>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

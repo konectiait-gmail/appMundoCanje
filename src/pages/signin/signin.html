@@ -1,0 +1,50 @@
+<ion-header class="bg-transparent">
+    <ion-navbar>
+        <ion-title>
+            <span class="start" (click)="register()">
+                <span  style="font-size: 2.5rem;">+ </span>
+                {{'register' | translate}}
+            </span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <div class="banner">
+        <img src="assets/imgs/fondo1-1.jpg" class="background">
+        <div class="logo">
+            <!--<img src="assets/imgs/logo.png"> -->
+            <img src="assets/imgs/Logomundo-canje.png">
+            
+        </div>
+    </div>
+    <div class="form">        
+        <ion-list no-lines padding-left padding-right>
+            <ion-item>
+                <ion-label floating>{{'email_address' | translate}}</ion-label>
+                <ion-input type="email" [(ngModel)]="user.Mail" value="samanthasmith@mail.com"></ion-input>
+            </ion-item>
+            <ion-item class="password">
+                <ion-label floating>{{'password' | translate}}</ion-label>
+                <ion-input type="password" [(ngModel)]="user.password" class="password" value="******"></ion-input>
+                <h5 class="text-theme" item-end (click)="password()">{{'forgot' | translate}}</h5>
+            </ion-item>
+            <button ion-button block class="btn" (click)="IngresarUsuario()" round>{{'Enter' | translate}}</button>
+            <!--
+            <p text-center class="text-white">{{'or_continue_with' | translate}}</p>
+            -->
+            <button ion-button block class="btn-xs" (click)="tabs()" round>{{'enter_invited' | translate}}</button>
+            
+            <div class="socile d-flex">
+                <button ion-button icon-start block outline class="btn text-blue" round>
+                    <ion-icon> <img src="assets/imgs/ic_facebook.png"></ion-icon>
+                    {{'facebook' | translate}}
+                </button>
+                <button ion-button icon-start block outline class="btn text-blue" round>
+                    <ion-icon class="google"> <img src="assets/imgs/ic_google.png"></ion-icon>
+                    {{'google' | translate}}
+                </button>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

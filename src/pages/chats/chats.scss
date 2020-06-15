@@ -1,0 +1,120 @@
+page-chats {
+
+    
+
+
+    .list {
+        .item {
+            margin: 0;
+            height: 70px;
+            //background: darken($light, 6%);
+            background: linear-gradient(100deg, #3a97c9 0%, #3a97c9 13.5%, #3a97c9 13.33%, #a26bb7 80%);     
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            border-bottom: .5px solid darken($gray, 30%) !important;
+
+            .item-inner {
+                position: relative;
+                padding: 0;
+
+                ion-label {
+                    margin: 0;
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+
+                    .details {
+                        position: relative;
+                        left: 0px;
+                        width: 100%;
+                        margin-right: 5px;
+                        margin-left: 5px;
+
+
+                        h2 {
+                            font-size: 1.55rem;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+
+                            span {
+                                font-size: .96rem;
+                                //min-width: 30px;
+                                color: $white;
+                            }
+                        }
+
+                        p {
+                            font-size: 1.2rem;
+                            font-weight: 300;
+                            color: $white;
+                        }
+                    }
+
+                    .img-box {
+                        width: 116px;
+                        height: 70px;
+                        min-width: 0px;
+                        border-radius: 0;
+                        overflow: hidden;
+                        position: relative;
+                        margin: 0;
+                        z-index: -10;
+
+                        img {
+                            position: absolute;
+                            width: 100%;
+                            max-width: unset;
+                            height: 100%;
+                            top: 0;
+                            right: -50% !important;
+                            left: -50% !important;
+                            bottom: 0;
+                            margin: auto;
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            right: 0px;
+                            width: 104%;
+                            height: 100%;
+                            display: block;
+                            //background: linear-gradient(to right, rgba(0, 0, 0, 0.39) 26%, rgba(3, 3, 3, 0.39) 51%, rgba(9, 9, 9, 1) 100%);
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                border-bottom: 0 !important;
+            }
+
+            &.active {
+                .item-inner ion-label .details {
+                    h2 .end {
+                        color: #ffeb3bd4;
+                    }
+
+                    p {
+                        .end {
+                            color: $white;
+                            background: $orange;
+                            border-radius: 50%;
+                            font-size: .9rem;
+                            min-width: 13px;
+                            text-align: center;
+                            line-height: 13px;
+
+                            &.notifications {
+                                //margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

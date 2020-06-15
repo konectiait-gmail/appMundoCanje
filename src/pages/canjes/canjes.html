@@ -1,0 +1,117 @@
+<ion-header class="bg-color">
+  <ion-navbar>
+      <ion-title class="text-theme">{{'canje_title' | translate}}         
+      </ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="near">
+      <ion-segment-button value="Ofrecidos">
+          {{'offers' | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="Recibidos">
+          {{'requested' | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="Canjeados">
+          {{'redeemed' | translate}}
+      </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content class="bg-color">
+  <div [ngSwitch]="near">
+      <!--*ngSwitchCase="'Ofrecidos'" No funciona con 2 *ng-->
+      <ion-list no-lines *ngSwitchCase="'Ofrecidos'">
+        <div *ngFor="let d of canjesLst; let i = index" >            
+            <ion-item (click)="edit_event(d)">   
+                    <img [src]="d.Imagen" class="bg">          
+                    <ion-badge item-end>
+                            <ion-icon name="md-stopwatch"></ion-icon>
+                            {{d.Ult_Dias}} Días
+                    </ion-badge>          
+                    <div class="text">
+                        <h2>{{d.Nombre}}</h2>
+                        <p class="d-flex">
+                        <span class="text-theme">{{d.Descripcion}}</span>
+                        <span class=""> | {{d.Categoria}}</span>
+                        <span class="end">$ {{d.Importe}}</span>
+                        </p>                  
+                    </div>
+            </ion-item>        
+        </div>
+        <div class="CanjeadosEmpty" *ngIf="!CanjesOfrecidos">
+                <img  src="assets/imgs/NoCanjes.png" >          
+                <h2 >No hay canjes ofrecidos</h2>           
+          </div>
+    
+      </ion-list>      
+      <ion-list class="ListReview" no-lines *ngSwitchCase="'Recibidos'" >
+          <div *ngFor="let d of recibidosLst">
+                <ion-item  (click)="ViewMatch(d)">
+                    <div class="item_header d-flex">
+                        <div class="profile d-flex">
+                            <div class="profile-img">
+                                <img [src]="d.Img_Usuario">
+                            </div>
+                            <h2 class="text-black">
+                                    {{d.Nombre_Usuario}}
+                                <span class="text-gray">{{d.Ult_Dias}} Días</span>
+                            </h2>
+                        </div>
+                        <!--
+                        <div class="rating end">
+                            <ion-icon name="md-star" class="acteive"></ion-icon>
+                            <ion-icon name="md-star" class="acteive"></ion-icon>
+                            <ion-icon name="md-star" class="acteive"></ion-icon>
+                            <ion-icon name="md-star" class="acteive"></ion-icon>
+                            <ion-icon name="md-star" class=""></ion-icon>
+                        </div>
+                        -->
+                        <div class="end">
+                                <ion-badge item-end (click)="ViewProfile(); $event.stopPropagation()">
+                                      <!--  <ion-icon name="md-stopwatch"></ion-icon>-->
+                                        Ver Perfil
+                                </ion-badge>                                  
+                            </div>
+                            
+                    </div>
+                    <p class="text-white text">
+                            {{d.Comentarios}}. Precio estimado ${{d.Importe}}
+                    </p>
+                </ion-item>
+
+                
+          </div>
+          <div class="RecibidosEmpty" *ngIf="!recibidosLst.length">
+                <img  src="assets/imgs/NoCanjes.png" >          
+                <h2 >No hay canjes recibidos</h2>
+           
+          </div>
+         
+    </ion-list>
+      <ion-list *ngSwitchCase="'Canjeados'">
+        <div *ngFor="let d of canjeadosLst">
+            <ion-item (click)="offerdetail(d.IdProductoMatch)">
+                <img [src]="d.ImagenMatch" class="bg">
+                <ion-badge item-end>
+                    <ion-icon name="md-calendar"></ion-icon>
+                    {{d.Fecha_Pedido}}
+                </ion-badge>
+                <div class="text">
+                    <h2>{{d.ProductoNombreMatch}}</h2>
+                    <p class="d-flex">
+                        <span class="text-theme">{{d.ProductoDescripcionMatch}}</span>
+                        <span class="">| {{d.CategoriaMatch}}</span>
+                    </p>
+                </div>
+            </ion-item>
+        </div>
+        <div class="CanjeadosEmpty" *ngIf="!canjeadosLst.length">
+                <img  src="assets/imgs/NoCanjes.png" >          
+                <h2 >No hay artículos canjeados</h2>           
+          </div>
+      </ion-list>
+  </div>
+  
+</ion-content>
+<ion-footer no-border class="d-flex">
+  <ion-icon class="material-icons text-white bg-theme end" (click)="NuevoCanje()">add</ion-icon>
+</ion-footer>

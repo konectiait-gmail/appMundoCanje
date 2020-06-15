@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            <ion-icon name="md-close" class="text-theme" (click)="dismiss()"></ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <div class="form">
+        <ion-searchbar (ionInput)="getItems($event)" placeholder="{{'what_are_you_searching_for' | translate}}" class="text-white"></ion-searchbar>
+        <!--
+        <ion-list no-lines>
+            <ion-item *ngFor="let item of listBusqueda">
+                {{ item.Nombre }}
+            </ion-item>
+        </ion-list>
+        -->
+        <ion-list  class="offers" *ngFor="let d of listBusqueda; let i = index">
+                <ion-item (click)="offerdetail(d.Id)">
+                    <img [src]="d.Imagen" class="bg">
+                    <ion-badge item-end>
+                        <ion-icon name="md-stopwatch"></ion-icon>
+                        {{d.Ult_Dias}}  Días
+                    </ion-badge>
+                    <div class="text">
+                        <h2>{{d.Nombre}}</h2>
+                        <p class="d-flex">
+                          <span class="text-theme">{{d.Descripcion}}</span>
+                          <span class="end">$ {{d.Importe}}</span>
+                        </p>                  
+                    </div>
+                </ion-item>
+        </ion-list>
+<!--
+        <div class="recent-serch">
+            <h2 class="text-gray">{{'recent_earches' | translate}}</h2>
+            <p class="text-white">Chinese Restaurant</p>
+            <p class="text-white">Formal Clothes</p>
+            <p class="text-white">Baked Cake</p>
+        </div>
+    -->
+    </div>
+    <div class="categories">
+        <h2 (click)="VerCategorias()" class="text-gray d-flex">{{'choose_categories' | translate}}<span class="text-theme end">{{'view_all' | translate}}</span></h2>
+        <ion-list no-lines>
+
+            <ion-item *ngFor="let d of categoriasLst; let i = index" (click)="category_result()">
+                    <img [src]="d.Imagen" class="bg">
+                    <div text-center class="text">
+                        <h2 class="text-white">{{d.Nombre | translate}}</h2>
+                        <p class="text-gray">{{d.Id}} Canjes</p>
+                    </div>
+                </ion-item>
+            <!--
+            <ion-item (click)="category_result()">
+                <img src="assets/imgs/ca1.png" class="bg">
+                <div text-center class="text">
+                    <h2 class="text-white">{{'food_restaurants' | translate}}</h2>
+                    <p class="text-gray">150 Canjes</p>
+                </div>
+            </ion-item>
+            <ion-item (click)="category_result()">
+                <img src="assets/imgs/ca2.png" class="bg">
+                <div text-center class="text">
+                    <h2 class="text-white"> {{'Moda' | translate}}</h2>
+                    <p class="text-gray">198 Canjes</p>
+                </div>
+            </ion-item>
+            <ion-item (click)="category_result()">
+                <img src="assets/imgs/ca4.png" class="bg">
+                <div text-center class="text">
+                    <h2 class="text-white">{{'dairy_bakery' | translate}}</h2>
+                    <p class="text-gray">110 Canjes</p>
+                </div>
+            </ion-item>
+            <ion-item (click)="category_result()">
+                <img src="assets/imgs/ca3.png" class="bg">
+                <div text-center class="text">
+                    <h2 class="text-white">{{'fashion_store' | translate}}</h2>
+                    <p class="text-gray">209 Canjes</p>
+                </div>
+            </ion-item>
+            <ion-item (click)="category_result()">
+                <img src="assets/imgs/ca5.png" class="bg">
+                <div text-center class="text">
+                    <h2 class="text-white">{{'salon_spa' | translate}}</h2>
+                    <p class="text-gray">111 Canjes</p>
+                </div>
+            </ion-item>
+            -->
+        </ion-list>
+    </div>
+</ion-content>

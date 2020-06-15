@@ -1,0 +1,158 @@
+<ion-header class="bg-transparent">
+    <ion-navbar>
+        <ion-title>{{'notifications' | translate}}</ion-title>
+    </ion-navbar>
+    <div class="banner">
+        <img src="assets/imgs/Fondo2_1080.jpg" class="bg">
+        <h4 class="d-flex text-white">
+            <ion-badge item-end>{{'4.3' | translate}}
+                <ion-icon name="md-star"></ion-icon>
+            </ion-badge>
+            10 Notificaciones nuevas
+        </h4>
+    </div>
+</ion-header>
+
+<ion-content class="bg-color">
+    <ion-list no-lines>
+        <ion-item (click)="ViewMatch()">
+            <div class="item_header d-flex">
+                <div class="profile d-flex">
+                    <div class="profile-img">
+                        <img src="assets/imgs/dp1.png">
+                    </div>
+                    <h2>
+                        Martina Valdez
+                        <span class="text-gray">2 Horas</span>
+                    </h2>
+                </div>
+                <div class="rating end">
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class=""></ion-icon>
+                </div>
+            </div>
+            <p class="text-black text">
+                Hola tengo una bicicleta playera es muy bueno estado para intercambiar por las clases de Guitarra. Precio estimado $2500
+            </p>
+        </ion-item>
+        <ion-item (click)="ViewCanjes()">
+            <div class="item_header d-flex">
+                <div class="profile d-flex">
+                    <div class="profile-img">
+                        <img src="assets/imgs/dp2.png">
+                    </div>
+                    <h2>
+                        Yo - Canje Ofrecido
+                        <span class="text-gray">5 Horas</span>
+                    </h2>
+                </div>
+                <div class="rating end">
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                </div>
+            </div>
+            <p class="text-black text">
+                Martin, ¿cómo estás? Me gustaría canjear tu par de zapatillas All Star por servicio de Aire Acondicionado. Precio estimado $2000
+            </p>
+        </ion-item>
+        <ion-item (click)="ViewMatch()">
+            <div class="item_header d-flex">
+                <div class="profile d-flex">
+                    <div class="profile-img">
+                        <img src="assets/imgs/dp3.png">
+                    </div>
+                    <h2>
+                        Julia Mendes
+                        <span class="text-gray">15/10/2019</span>
+                    </h2>
+                </div>
+                <div class="rating end">
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class=""></ion-icon>
+                    <ion-icon name="md-star" class=""></ion-icon>
+                </div>
+            </div>
+            <p class="text-black text">
+                Hola tengo una cámara de fotos Kodak para cambiar por las clases de Guitarra. Precio estimado $1900
+            </p>
+        </ion-item>
+
+        <ion-item (click)="ViewMatch()">
+            <div class="item_header d-flex">
+                <div class="profile d-flex">
+                    <div class="profile-img">
+                        <img src="assets/imgs/user4.jpg">
+                    </div>
+                    <h2>
+                        Silvia Paez
+                        <span class="text-gray">15/10/2019</span>
+                    </h2>
+                </div>
+                <div class="rating end">
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class=""></ion-icon>
+                </div>
+            </div>
+            <p class="text-black text">
+                Quisiera cambiar un microondas por tus Anteojos Rayban. Precio estimado $3500
+            </p>
+        </ion-item>
+        <ion-item (click)="ViewCanjes()">
+            <div class="item_header d-flex">
+                <div class="profile d-flex">
+                    <div class="profile-img">
+                        <img src="assets/imgs/dp2.png">
+                    </div>
+                    <h2>
+                        Yo - Canje Ofrecido
+                        <span class="text-gray">14/10/2019</span>
+                    </h2>
+                </div>
+                <div class="rating end">
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                </div>
+            </div>
+            <p class="text-black text">
+                Quisiera la parrillada para dos personas. Ofrezco servicio de reparación de aire Acondicionado. Precio $2000
+            </p>
+        </ion-item>
+        <ion-item (click)="ViewMatch()">
+            <div class="item_header d-flex">
+                <div class="profile d-flex">
+                    <div class="profile-img">
+                        <img src="assets/imgs/user3.jpg">
+                    </div>
+                    <h2>
+                        Pablo Mesenas
+                        <span class="text-gray">10/10/2019</span>
+                    </h2>
+                </div>
+                <div class="rating end">
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class="acteive"></ion-icon>
+                    <ion-icon name="md-star" class=""></ion-icon>
+                    <ion-icon name="md-star" class=""></ion-icon>
+                </div>
+            </div>
+            <p class="text-black text">
+                Quisiera cambiar servicios de páginas web por tus Anteojos Rayban. Precio estimado $3000
+            </p>
+        </ion-item>
+    </ion-list>
+</ion-content>

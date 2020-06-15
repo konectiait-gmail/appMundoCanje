@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{'chats_history' | translate}}<span class="end">
+                <img src="assets/imgs/ic_search-4.png" (click)="search()">
+            </span></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    
+<!--
+    <ion-list no-lines *ngFor="let d of chatLst; let i = index">
+        <ion-item class="active" (click)="chatting()">
+            <div class="img-box">
+                <img src="assets/imgs/background.png">
+            </div>
+            <div class="details">
+                <h2 class="text-white d-flex">Las Medialunas del Abuelo<span class="end">{{d.Fecha_Ultimo_Mensaje}}</span></h2>
+                <p class="text-white d-flex">{{d.Ultimo_Mensaje}}<span class="end notifications">1</span></p>
+            </div>
+        </ion-item>
+-->
+<ion-list no-lines *ngFor="let d of chatLst; let i = index">
+        <ion-item (click)="chatting(d)">
+                <div  *ngIf="(d.Usuario_Emisor != idUsuarioPropio)"  class="img-box">
+                    <img [src]="d.ImgUsuarioEmisor">
+                </div>
+                <div *ngIf="(d.Usuario_Receptor != idUsuarioPropio)" class="img-box">
+                        <img [src]="d.ImgUsuarioReceptor">
+                    </div>
+                <div *ngIf="(d.Usuario_Emisor != idUsuarioPropio)" class="details">
+                    <h2 class="text-white d-flex">{{d.NombreUsuarioEmisor}}<span class="end">{{d.Fecha_Ultimo_Mensaje | date:"dd/MM/yyyy"}}</span></h2>
+                    <p class=" d-flex">{{d.Ultimo_Mensaje}}<span class="end"></span></p>
+                </div>
+                <div *ngIf="(d.Usuario_Receptor != idUsuarioPropio)" class="details">
+                        <h2 class="text-white d-flex">{{d.NombreUsuarioReceptor}}<span class="end">{{d.Fecha_Ultimo_Mensaje | date:"dd/MM/yyyy"}}</span></h2>
+                        <p class=" d-flex">{{d.Ultimo_Mensaje}}<span class="end"></span></p>
+                    </div>
+            </ion-item>
+    <!--
+        <ion-item (click)="chatting()">
+            <div class="img-box">
+                <img src="assets/imgs/chat_2.jpg">
+            </div>
+            <div class="details">
+                <h2 class="text-white d-flex">María Sanchez<span class="end">12:30</span></h2>
+                <p class=" d-flex">Estamos en contacto.<span class="end"></span></p>
+            </div>
+        </ion-item>
+        <ion-item (click)="chatting()">
+            <div class="img-box">
+                <img src="assets/imgs/chat_3.jpg">
+            </div>
+            <div class="details">
+                <h2 class="text-white d-flex">Paula Paz<span class="end">10:23</span></h2>
+                <p class=" d-flex">Esta semana estoy hasta las 14.00 hs.<span class="end"></span></p>
+            </div>
+        </ion-item>
+        <ion-item (click)="chatting()">
+            <div class="img-box">
+                <img src="assets/imgs/chat_4.jpg">
+            </div>
+            <div class="details">
+                <h2 class="text-white d-flex">La Continental<span class="end"> 10:30</span></h2>
+                <p class="d-flex">El canje se realizó con éxito.<span class="end"></span></p>
+            </div>
+        </ion-item>
+        <ion-item (click)="chatting()">
+            <div class="img-box">
+                <img src="assets/imgs/chat_5.jpg">
+            </div>
+            <div class="details">
+                <h2 class="text-white d-flex">Peluquería Leo Paparella<span class="end">12:30</span></h2>
+                <p class=" d-flex">Te esperamos de 14 a 21 hs.<span class="end"></span></p>
+            </div>
+        </ion-item>
+        <ion-item (click)="chatting()">
+            <div class="img-box">
+                <img src="assets/imgs/chat_6.jpg">
+            </div>
+            <div class="details">
+                <h2 class="text-white d-flex">Dietética La Colmena<span class="end">Ayer</span></h2>
+                <p class=" d-flex">Muchas gracias, me quedó perfecto.<span class="end"></span></p>
+            </div>
+        </ion-item>
+
+        -->
+    </ion-list>
+</ion-content>
